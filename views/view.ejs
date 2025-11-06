@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+    <main class="main-content form-page single-post-page">
+        <a href="/" class="btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <article class="posts">
+            <h2><%= post.title %></h2> 
+            
+            <p><%= post.content %></p>
+            
+            <div class="form_post">
+                <a href="/edit/<%= post.id %>" class="btn-edit">
+                    <i class="fa-solid fa-pen-to-square icon-btn"></i>
+                </a>
+            </div>
+        </article>
+    </main>
+<%- include("partials/footer.ejs") %>

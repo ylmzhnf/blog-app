@@ -1,0 +1,34 @@
+<%- include("partials/header.ejs") %>
+    <main class="main-content form-page">
+        <article class="post-container">
+
+            <div class="header">
+                <h1>New Blog Post</h1>
+                <a href="/" class="btn"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <form action="/new" method="post" class="form">
+                <input type="text"
+                    class="title <%= (typeof errors !== 'undefined' && errors.title) ? 'input-error' : '' %>"
+                    name="title" placeholder="Title"
+                    value="<%= (typeof oldData !== 'undefined' && oldData.title) ? oldData.title : '' %>" required>
+                <% if (typeof errors !=='undefined' && errors.title) { %>
+                    <p class="input-error-message">
+                        <%= errors.title %>
+                    </p>
+                    <% } %>
+                        <textarea class="<%= (typeof errors !== 'undefined' && errors.content) ? 'input-error' : '' %>"
+                            name="content" rows="10" cols="50" id="post"
+                            placeholder="Write your post..."><%= (typeof oldData !== 'undefined' && oldData.content) ? oldData.content : '' %></textarea>
+                        <% if (typeof errors !=='undefined' && errors.content) { %>
+                            <p class="input-error-message">
+                                <%= errors.content %>
+                            </p>
+                            <% } %>
+                                <div class="btn-container">
+                                    <button class="post-btn" type="submit">Publish</button>
+                                </div>
+            </form>
+
+        </article>
+    </main>
+    <%- include("partials/footer.ejs") %>

@@ -1,0 +1,33 @@
+footer {
+  margin-top: auto;
+  background-color: var(--head-text-clr);
+  color: var(--post-clr);
+  text-align: center;
+  padding: 1.5rem 0;
+  max-width: none;
+  width: 100%;
+}
+footer p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.social-link ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+}
+.social-link ul li a {
+  text-decoration: none;
+}
+.social-icon {
+  font-size: 2rem;
+  color: var(--post-clr);
+}
+
+.social-icon:hover {
+  transform: translateY(-4px);
+}

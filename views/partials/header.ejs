@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7a0886bfdb.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style/styles.css">
+    <title>My Blog</title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="menu-overlay"></div>
+        <header class="sidebar-header">
+            <nav class="navbar">
+                <div class="head">
+                    <i class="fa-solid fa-feather-pointed icon-nav"></i>
+                    <h1><a href="/">MY BLOG</a></h1>
+                    <button class="hamburger-btn ">
+                        <i class="fa-solid fa-bars icon-nav"></i>
+                    </button>
+                    <button class="close-btn">
+                        <i class="fa-regular fa-circle-xmark icon-nav"></i>
+                    </button>
+                </div>
+                <div class="titles menu-list">
+                    <h2>Recent Post</h2>
+                    <ul>
+                        <% if (typeof posts !=='undefined' && posts.length> 0) { %>
+                            <% posts.slice(0, 5).forEach(post=> { %>
+                                <li><a href="/view/<%= post.id %>">
+                                        <%= post.title %>
+                                    </a></li>
+                                <% }); %>
+                                    <% } else { %>
+                                       <li><a href="/new">No posts yet — create one!</a></li>
+                                        <% } %>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="page-wrapper_content">

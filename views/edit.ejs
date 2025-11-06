@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs") %>
+    <main class="main-content form-page">
+        <article class="post-container">
+            <div class="header">
+                <h1>Edit Post</h1>
+                <a href="/" class="btn"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <form action="/edit/<%= post.id %>" method="post" class="form">
+                
+                <input 
+                    type="text" 
+                    class="title <%= (typeof errors !== 'undefined' && errors.title) ? 'input-error' : '' %>" 
+                    name="title" 
+                    placeholder="Title" 
+                    value="<%= (typeof oldData !== 'undefined' && oldData.title) ? oldData.title : post.title %>" 
+                    required
+                >
+                <% if (typeof errors !== 'undefined' && errors.title) { %>
+                    <p class="input-error-message"><%= errors.title %></p>
+                <% } %>
+
+                <textarea 
+                    name="content" 
+                    rows="10" 
+                    cols="50" 
+                    id="post" 
+                    placeholder="Write your post..."
+                    class="<%= (typeof errors !== 'undefined' && errors.content) ? 'input-error' : '' %>"
+                ><%= (typeof oldData !== 'undefined' && oldData.content) ? oldData.content : post.content %></textarea>
+                <% if (typeof errors !== 'undefined' && errors.content) { %>
+                    <p class="input-error-message"><%= errors.content %></p>
+                <% } %>
+
+                <div class="btn-container">
+                    <button class="post-btn" type="submit">Save Changes</button>
+                </div>
+            </form>
+        </article>
+    </main>
+<%- include("partials/footer.ejs") %>
