@@ -24,7 +24,7 @@ This project serves as a foundational back-end application focusing on Server-Si
 
 ## 🖥️Live Demo
 
-🔗 **[Visit Website](https://ylmzhnf.github.io/blog-app)**
+🔗 **[Visit Website](https://blog-app-wb8o.onrender.com)**
 
 ---
 
